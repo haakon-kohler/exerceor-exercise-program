@@ -5,9 +5,9 @@ public class program {
     private String startString;
     private String name;
 
-    public void createProgram(juDate startIn, String nameIn) 
+    public void createProgram(String startIn, String nameIn) 
     {
-        start = startIn;
+        startString = startIn;
         name = nameIn;
     }
 
