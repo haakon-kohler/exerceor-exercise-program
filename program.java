@@ -13,12 +13,12 @@ public class program {
 
     public getStart()
     {
-        return (start);
+        return (startString);
     }
 
     public setStart(String startIn)
     {
-        start = startIn;
+        startString = startIn;
     }
 
     public getName()
@@ -30,13 +30,5 @@ public class program {
     {
         name = nameIn;
     }
-
-    // ! DOESN'T RETURN THE START DATE
-    // public getNiceDate()
-    // {
-    //    String out = new String();
-    //    out = "[" + getMonthOfYear() + " " + getDateOfYear() + ", " + getYear() + "]";
-    //    return (out);
-    // }
 }
 
