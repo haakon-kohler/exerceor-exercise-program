@@ -4,6 +4,7 @@ public class Program {
     // The overall exercise program, data structure for individual list
     private String startString;
     private String name;
+    private ArrayList cycleList;
 
     public void createProgram(String startIn, String nameIn) 
     {
@@ -15,6 +16,13 @@ public class Program {
     {
         startString = startIn;
         name = nameIn;
+    }
+   
+    public void createProgram(String startIn, String nameIn, Cycle<E> firstCycle) 
+    {
+        startString = startIn;
+        name = nameIn;
+        cycleList.add(firstCycle);
     }
 
     public getStart()
@@ -35,6 +43,11 @@ public class Program {
     public setName(String nameIn)
     {
         name = nameIn;
+    }
+    
+    public addCycle(Cycle<E> cycleIn)
+    {
+        cycleList.add(cycleIn);
     }
 }
 
