@@ -44,9 +44,3 @@ public class Program {
         cycleList.add(cycleIn);
     }
 }
-
-    public addCycle(Cycle<E> cycleIn)
-    {
-        cycleList.add(cycleIn);
-    }
-}
