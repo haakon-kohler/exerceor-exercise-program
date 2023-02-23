@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class program {
+public class Program {
     // The overall exercise program, data structure for individual list
     private String startString;
     private String name;
