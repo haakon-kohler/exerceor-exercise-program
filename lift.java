@@ -3,37 +3,18 @@ import java.util.ArrayList;
 public class Lift<E extends Comparable<E>>
 {
 
-    private juDate date;
+    private int date;
     private int sets;
     private int reps;
     private int weight;
     private int rest;
-    // TODO ADD RPE
+    private int difficulty;
 
-    // ! Each item in the BST needs to have a date, so methods avoiding date are invalid
-    // public void LiftCreate(int weightIn, int restIn)
-    // // ! KEEP IN THIS ORDER, because weight + reps isn't optional
-    // // Sets and date can be optionally added    
-    // {
-    //     weight = weightIn;
-    //     reps = repsIn;
-    //     sets = 1;
-    //     date = null;
-    //     rest = 60;
-    // }
+    
 
-    // public void LiftCreate(int weightIn, int repstIn, int setsIn)
-    // // ! KEEP IN THIS ORDER, because weight + reps isn't optional
-    // // Sets and date can be optionally added
-    // {
-    //     weight = weightIn;
-    //     reps = repsIn;
-    //     sets = setsIn;
-    //     date = null;
-    //     rest = 60;
-    // }
+    
 
-    public void LiftCreate(int weightIn, int repsIn, int setsIn, int dateIn)
+    public void LiftCreate(int weightIn, int repsIn, int setsIn, int restIn, int dateIn, int diff)
     // ! KEEP IN THIS ORDER, because weight + reps isn't optional
     // Sets and date can be optionally added
     {
@@ -42,55 +23,45 @@ public class Lift<E extends Comparable<E>>
         date = dateIn;
         sets = setsIn;
         rest = 60;
+        difficulty=diff;
     }
 
-    public void LiftCreate(int weightIn, int repsIn, int setsIn, int restIn, int dateIn)
-    // ! KEEP IN THIS ORDER, because weight + reps isn't optional
-    // Sets and date can be optionally added
-    {
-        weight = weightIn;
-        reps = repsIn;
-        date = dateIn;
-        sets = setsIn;
-        rest = restIn;
-    }
 
-    public getWeight()
+    public int getWeight()
     {
         return(weight);
     }
     
-    public getSets()
+    public int getSets()
     {
         return(sets);
     }
 
-    public getReps()
+    public int getReps()
     {
         return(reps);
     }
+    public int getDifficulty() {
+    	
+    	return(difficulty);
+    }
 
-    public getRest()
+    public int getRest()
     {
         return(rest);
     }
 
-    public getDate()
+    public int getDate()
     {
         return (date);
     }
 
+    
     public String toString()
     {
         String out;
-        out = "[Weight (lb): " + getWeight() + ", Reps" + getReps() + ", Sets, " + getSets() + ", Rest (seconds): " + getRest();
-        if (getDate() == null) {
-            out += ", No Date Added]";
-        }
-        else {
-            out += ", " + getNiceDate() + "]";
-        }
-
+        out = "[Day in cycle:" + date + ",weight (lb): " + getWeight() + ", Reps" + getReps() + ", Sets, " + getSets() + ", Rest (seconds): " + getRest();
+      
         return (out);
     }
 }
