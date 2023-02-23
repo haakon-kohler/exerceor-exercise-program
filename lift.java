@@ -1,7 +1,6 @@
 import java.util.ArrayList;
-import java.util.Date;
 
-public class Lift<E>
+public class Lift<E extends Comparable<E>>
 {
 
     private juDate date;
