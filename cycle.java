@@ -1,8 +1,7 @@
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Cycle<E extends BSTNode<E>> {
-    private 
-    private int start;
-    private int end;
+public class Cycle<E extends BST<E>> {
+    private int startString;
+    private int endString;
 }

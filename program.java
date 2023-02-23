@@ -11,6 +11,12 @@ public class program {
         name = nameIn;
     }
 
+    public void createProgram(String startIn, String nameIn, Cycle<E> firstCycle) 
+    {
+        startString = startIn;
+        name = nameIn;
+    }
+
     public getStart()
     {
         return (startString);
