@@ -10,10 +10,6 @@ public class Lift<E extends Comparable<E>>
     private int rest;
     private int difficulty;
 
-    
-
-    
-
     public void LiftCreate(int weightIn, int repsIn, int setsIn, int restIn, int dateIn, int diff)
     // ! KEEP IN THIS ORDER, because weight + reps isn't optional
     // Sets and date can be optionally added
@@ -25,7 +21,6 @@ public class Lift<E extends Comparable<E>>
         rest = 60;
         difficulty=diff;
     }
-
 
     public int getWeight()
     {
@@ -56,7 +51,6 @@ public class Lift<E extends Comparable<E>>
         return (date);
     }
 
-    
     public String toString()
     {
         String out;
