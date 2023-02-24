@@ -4,7 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.FileNotFoundException;
 
-public class Cycle extends BST {
+public class Cycle<E> extends BST {
     private int startString;
     private int endString;
     private String name;
