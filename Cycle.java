@@ -8,14 +8,14 @@ public class Cycle<Lift extends BST<E>> {
     private int startString;
     private int endString;
 
-    public String getStart()
+    public int getStart()
     {
-        return (startString);
+        return (startTime);
     }
 
-    public void setStart(String startIn)
+    public void setStart(Integer startIn)
     {
-        startString = startIn;
+        startTime = startIn;
     }
 
     public String getName()
