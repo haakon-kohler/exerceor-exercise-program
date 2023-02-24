@@ -58,4 +58,15 @@ public class Lift<E extends Comparable<E>>
       
         return (out);
     }
+    public int compareTo(Lift other) {
+    	if (this.date>other.date) {
+    		return 1;
+    	}
+    	if (this.date==other.date) {
+    		return 0;
+    		}
+    	else {
+    		return -1;
+    	}
+    	}
 }
