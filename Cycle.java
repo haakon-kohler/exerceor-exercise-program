@@ -4,9 +4,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.FileNotFoundException;
 
-public class Cycle<Lift extends BST<E>> {
+public class Cycle extends BST {
     private int startString;
     private int endString;
+    private String name;
 
     public int getStart()
     {
@@ -30,7 +31,7 @@ public class Cycle<Lift extends BST<E>> {
     
     public void PrintCycle(Cycle cycle1) {
     	try {
-    	File file = new File("/Users/nicholasrose/Desktop/workoutplan.txt");
+    	File file = new File("/Users/haakonkohler/Desktop/file.txt");
 		file.createNewFile();
 		
 		FileWriter myWriter = new FileWriter("workoutplan.txt");
