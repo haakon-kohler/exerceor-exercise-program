@@ -5,18 +5,28 @@ import java.io.IOException;
 import java.io.FileNotFoundException;
 
 public class Cycle<E> extends BST {
-    private int startString;
-    private int endString;
+    private int startInt;
+    private int endInt;
     private String name;
 
     public int getStart()
     {
-        return (startTime);
+        return (startInt);
     }
 
     public void setStart(Integer startIn)
     {
-        startTime = startIn;
+        startInt = startIn;
+    }
+
+    public int getEnd()
+    {
+        return (startInt);
+    }
+
+    public void setEnd(Integer endIn)
+    {
+        endInt = endIn;
     }
 
     public String getName()
