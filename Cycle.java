@@ -38,6 +38,47 @@ public class Cycle<E> extends BST {
     {
         name = nameIn;
     }
+
+    public Lift getEarlierDate(Cycle<Lift> cycleIn, BSTNode<Lift> BSTLiftIn)
+    {
+        int date = ((Lift)BSTLiftIn.getValue()).getDate();
+        if (date>0)
+        {
+            BSTNode<Lift> rt = (BSTNode<Lift>)cycleIn.getRoot();
+                if (rt == null) {
+                    return null;
+                }
+                if (((Lift)BSTLiftIn.getValue()).getDate()==(((Lift)rt.getValue()).getDate())) {
+                    return null;
+                }
+                else {
+                    if (((Lift)rt.getValue()).getDate()>date)
+                        {
+                        BSTNode<Lift>  out = rt.getLeft();
+                        Lift before = getEarlierDate(cycleIn, out);
+                        if ((before.getDate())>=((Lift)out.getValue()).getDate())
+                        {
+                            return before;
+                        }
+                        else if (before!=null)
+                        {
+                            return out.getValue();
+                        }
+                        else 
+                        {
+                            return rt.getValue();
+                        }
+                        // if(((Lift)BSTLiftIn.getValue()).getDate()<(((Lift)rt.getValue()).getDate())) {
+
+                        }
+                    }
+                }
+                
+                }
+        }
+
+        return null;
+    }
     
     public void PrintCycle() {
     	try {

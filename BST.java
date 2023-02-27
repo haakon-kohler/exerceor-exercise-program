@@ -5,6 +5,11 @@ public class BST<E extends Comparable<E>> {
     {
         root = null;
     }
+
+    public BSTNode getRoot()
+    {
+        return root;
+    }
     
     public void insert(E data)
     {
