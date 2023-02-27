@@ -89,7 +89,7 @@ public class Lift implements Comparable<Lift>
     public String toString()
     {
         String out;
-        out = "\n\nCycle Date:" + date + "\n Weight: " + getWeight() + " lbs" + "\n Reps: " + getReps() + "\n Sets: " + getSets() + "\n Rest: " + getRest() + " sec";
+        out = "\n\nLift Date:" + date + "\n Weight: " + getWeight() + " lbs" + "\n Reps: " + getReps() + "\n Sets: " + getSets() + "\n Rest: " + getRest() + " sec";
       
         return (out);
     }
