@@ -39,20 +39,29 @@ public class Cycle<E> extends BST {
         name = nameIn;
     }
     
-    public void PrintCycle(Cycle cycle1) {
+    public void PrintCycle() {
     	try {
-    	File file = new File("/Users/haakonkohler/Desktop/file.txt");
+    	File file = new File("/Users/nicholasrose/Desktop/workoutplan.txt");
 		file.createNewFile();
 		
-		FileWriter myWriter = new FileWriter("workoutplan.txt");
+		FileWriter myWriter = new FileWriter("/Users/nicholasrose/Desktop/workoutplan.txt");
 		
-		myWriter.write(cycle1.toString());
+		myWriter.write(this.inorder());
 		
 		myWriter.close();
 		
     	}
     	catch (Exception IOException) {
+    		try {
+    		FileWriter myWriter = new FileWriter("/Users/nicholasrose/Desktop/workoutplan.txt");
+
+    		myWriter.write(this.inorder());
     		
+    		myWriter.close();
+    		}
+    		catch(Exception IOExcpetion){
+    			
+    		}
     	}
     }
 }
