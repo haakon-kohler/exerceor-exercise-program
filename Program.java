@@ -12,34 +12,34 @@ public class Program {
         name = nameIn;
     }
 
-    public void createProgram(String startIn, String nameIn, Cycle<E> firstCycle) 
+    public void createProgram(String startIn, String nameIn, Cycle<Lift> firstCycle) 
     {
         startString = startIn;
         name = nameIn;
         cycleList.add(firstCycle);
     }
 
-    public getStart()
+    public String getStart()
     {
         return (startString);
     }
 
-    public setStart(String startIn)
+    public void setStart(String startIn)
     {
         startString = startIn;
     }
 
-    public getName()
+    public String getName()
     {
         return (name);
     }
 
-    public setName(String nameIn)
+    public void setName(String nameIn)
     {
         name = nameIn;
     }
 
-    public addCycle(Cycle<E> cycleIn)
+    public void addCycle(Cycle<Lift> cycleIn)
     {
         cycleList.add(cycleIn);
     }
