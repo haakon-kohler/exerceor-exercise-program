@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.math.BigDecimal;
 public class Process {
     // File for running the 1RM program
 
@@ -14,10 +14,37 @@ public class Process {
             }
             else
             {
-                ArrayList repsPercent = new ArrayList<Integer>();
-                int[] array = {100,97,94,92,89,86,83,81,78,75,73,71,70,68,67};
-                repsPercent = Arrays.asList(array);
-                return -1;
+                ArrayList repsPercent = new ArrayList<Double>();
+                
+                repsPercent.add(100);
+                repsPercent.add(97);
+                repsPercent.add(94);
+                repsPercent.add(92);
+                repsPercent.add(89);
+                repsPercent.add(86);
+                repsPercent.add(83);
+                repsPercent.add(81);
+                repsPercent.add(78);
+                repsPercent.add(75);
+                repsPercent.add(73);
+                repsPercent.add(71);
+                repsPercent.add(70);
+                repsPercent.add(68);
+                repsPercent.add(67);
+                
+                // Converts all of these variables to BigDecimal form for use in multiplication, etc.
+                BigDecimal out = new BigDecimal((Integer)repsPercent.get((Integer)liftIn.getReps()));
+                BigDecimal weight = new BigDecimal(liftIn.getWeight());
+                BigDecimal roundingCurve = new BigDecimal(0.955);
+                BigDecimal restTimeFactor = new BigDecimal(1.06);
+
+                for (int i = 0; i<liftIn.getSets(); i++)
+                {
+                    out = out.multiply(roundingCurve.pow(liftIn.getSets()));
+                    out = out.multiply(restTimeFactor.pow(liftIn.getSets()).sqrt(null));
+                }
+
+                return out.multiply(weight).round(null).toBigInteger().intValue();
             }
         }
         else return liftIn.getWeight();
@@ -33,5 +60,5 @@ public class Process {
 //         // TODO liftIn.getDate() Compare to the most recent lift before, then keep going back weighing each one less
 //         return -1;
 //     }
-// }
+}
 
