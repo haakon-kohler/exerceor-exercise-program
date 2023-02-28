@@ -49,16 +49,37 @@ public class Process {
         }
         else return liftIn.getWeight();
     }
+ 
+    public ArrayList<Lift> printTree(Cycle<Lift> cycleIn)
+    {
+        return printTree(cycleIn.getRoot());
+    }
 
-//     public int outExpectedDifficulty(Cycle cycleIn, Lift liftIn)
-//     {
-//         if(cycleIn.find(liftIn)!=false)
-//         {
-//             System.out.println("Lift not in correct cycle");
-//             return -1;
-//         }
-//         // TODO liftIn.getDate() Compare to the most recent lift before, then keep going back weighing each one less
-//         return -1;
-//     }
+    private ArrayList<Lift> printTree(BSTNode<Lift> rt)
+    {
+        ArrayList<Lift> out = new ArrayList<Lift>();
+        {
+            if (rt != null) {
+                printTree(rt.getLeft());
+                out.add(rt.getValue());
+                printTree(rt.getRight());
+            }
+        }
+        return out;
+    }
+
+    public int getWhole1RM(Cycle cycleIn)
+    {
+        ArrayList<Lift> liftTable = printTree(cycleIn);
+        BigDecimal out = new BigDecimal(null, 0);
+
+        for(int i =0; i<20; i++)
+        {
+            BigDecimal RM = new BigDecimal(getSingle1RM(liftTable.get(i)));
+            out = out.multiply(new BigDecimal(0.6).add(new BigDecimal(i*0.02))).add((new BigDecimal(1)).subtract(new BigDecimal(0.6).add(new BigDecimal(i*0.02))).multiply(RM));
+        }
+        return -1;
+    }
 }
+
 
