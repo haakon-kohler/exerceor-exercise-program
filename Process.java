@@ -75,8 +75,8 @@ public class Process {
 
         for(int i =0; i<20; i++)
         {
-            BigDecimal RM = new BigDecimal(getSingle1RM(liftTable.get(i)));
-            out = out.multiply(new BigDecimal(0.6).add(new BigDecimal(i*0.02))).add((new BigDecimal(1)).subtract(new BigDecimal(0.6).add(new BigDecimal(i*0.02))).multiply(RM));
+            BigDecimal RM = new BigDecimal(getSingle1RM(liftTable.get(liftTable.size()-i)));
+            out = out.multiply(new BigDecimal(0.6).add(new BigDecimal((i)*0.02))).add((new BigDecimal(1)).subtract(new BigDecimal(0.6).add(new BigDecimal(i*0.02))).multiply(RM));
         }
         return -1;
     }
